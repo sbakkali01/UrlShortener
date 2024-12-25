@@ -7,3 +7,7 @@ templates=Jinja2Templates("templates")
 @app.get('/',response_class=HTMLResponse)
 def home(request:Request):
     return templates.TemplateResponse(request,name="index.html")
+
+@app.post('/')
+def get_long_url(long_url):
+    return long_url
