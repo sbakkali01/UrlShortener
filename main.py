@@ -1,4 +1,4 @@
-from fastapi import FastAPI,Request
+from fastapi import FastAPI,Request,Form
 from fastapi.responses import HTMLResponse
 from starlette.templating import Jinja2Templates
 
@@ -8,6 +8,8 @@ templates=Jinja2Templates("templates")
 def home(request:Request):
     return templates.TemplateResponse(request,name="index.html")
 
-@app.post('/')
-def get_long_url(long_url):
-    return long_url
+@app.post('/submit')
+def get_long_url(data=Form(...)):
+    print(data)
+    print()
+    return data
