@@ -43,7 +43,7 @@ def get_long_url(data=Form()):
 
 @app.get('/redirect/{token}',response_class=RedirectResponse)
 def redirect_to_long_url(token):
-    short_url="http://127.0.0.1:8000"+"/"+token
+    short_url="http://127.0.0.1:8000"+"/redirect/"+token
     data=fetch_from_db(f"""select * from my_table where short_url='{short_url}' """ )
     long_url=data[0][0]
     return RedirectResponse(long_url)
