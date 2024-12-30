@@ -6,26 +6,81 @@
 </head>
 
 <body>
-<div>
+<div class="container">
+
     <form action="/submit" method="post">
-        <div>
+        <div class="suggestion">
             <label>Insert your long URL here : </label>
-            <input type="text" name="data">
         </div>
-        <div>
+        <div class="url-bar">
+            <input type="url" name="data">
+        </div>
+        <div class="button">
             <input type="submit">
         </div>
     </form>
+
 </div>
 
 </body>
 
 <style>
-    body{
+    body {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
     }
+
+    .container {
+        border: black solid 1px;
+        box-shadow: black -4px 8px 20px 0px;
+        border-radius: 10px;
+        height: 40vh;
+        width: 40vw;
+
+    }
+
+    form {
+        height: inherit;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .suggestion {
+        grid-row: 1/2;
+        grid-column: 1/4;
+        display: flex;
+        align-items: center;
+
+    }
+
+    label {
+        position: relative;
+        left: 20px;
+    }
+
+    .url-bar {
+        grid-row: 2/3;
+        grid-column: 1/4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button {
+        grid-row: 3/4;
+        grid-column: 2/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    input[type=url]{
+        width: 70%;
+        border-radius: 5px;
+        padding: 10px 6px;
+    }
+
 </style>
 </html>
