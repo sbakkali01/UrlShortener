@@ -25,6 +25,11 @@
 </body>
 
 <style>
+    * {
+        box-sizing: border-box;
+        font-family: 'Courier New';
+    }
+
     body {
         display: flex;
         justify-content: center;
@@ -53,13 +58,21 @@
         grid-column: 1/4;
         display: flex;
         align-items: center;
+        //display: inline-block;
 
     }
 
     label {
         position: relative;
         left: 20px;
+        font-size: x-large;
+        animation:
+            typing 2s forwards;
     }
+    @keyframes typing {
+        from {width: 0} to {width: 100%}
+    }
+
 
     .url-bar {
         grid-row: 2/3;
@@ -76,11 +89,26 @@
         align-items: center;
         justify-content: center;
     }
-    input[type=url]{
+
+    input[type=url] {
         width: 70%;
+        border: black 2px solid;
         border-radius: 5px;
         padding: 10px 6px;
     }
 
+
+    input[type=submit]{
+        background-color: lightblue;
+        transition: background-color 1s ease-in-out;
+        padding: 16px 32px;
+        border: solid black 2px;
+        border-radius: 10px;
+    }
+    input[type=submit]:hover{
+        background-color: dodgerblue;
+        transition: background-color 1s ease-in-out;
+
+    }
 </style>
 </html>
